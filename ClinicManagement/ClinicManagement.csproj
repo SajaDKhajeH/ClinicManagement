@@ -46,27 +46,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bimar.cs" />
-    <Compile Include="BimarManager.cs" />
-    <Compile Include="FrmAddBimar.cs">
+    <Compile Include="Patient.cs" />
+    <Compile Include="PatientManager.cs" />
+    <Compile Include="FrmAddPatient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAddBimar.Designer.cs">
-      <DependentUpon>FrmAddBimar.cs</DependentUpon>
+    <Compile Include="FrmAddPatient.Designer.cs">
+      <DependentUpon>FrmAddPatient.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmBimaran.cs">
+    <Compile Include="FrmPatients.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBimaran.Designer.cs">
-      <DependentUpon>FrmBimaran.cs</DependentUpon>
+    <Compile Include="FrmPatients.Designer.cs">
+      <DependentUpon>FrmPatients.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmAddBimar.resx">
-      <DependentUpon>FrmAddBimar.cs</DependentUpon>
+    <EmbeddedResource Include="FrmAddPatient.resx">
+      <DependentUpon>FrmAddPatient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBimaran.resx">
-      <DependentUpon>FrmBimaran.cs</DependentUpon>
+    <EmbeddedResource Include="FrmPatients.resx">
+      <DependentUpon>FrmPatients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

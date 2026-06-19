@@ -1,6 +1,6 @@
 ﻿namespace ClinicManagement
 {
-    public class Bimar
+    public class Patient
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
