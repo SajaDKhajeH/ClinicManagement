@@ -27,9 +27,15 @@ namespace ClinicManagement
 
         private void dgvPatient_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dgvPatient.Columns["ColDelete"].Index)
+            if (e.RowIndex < 0)
+                return;
+            if(e.ColumnIndex == dgvPatient.Columns["ColDelete"].Index)
             {
-                MessageBox.Show(e.RowIndex.ToString());
+                PatientManager p=new PatientManager();
+                p.DeletePatient(e.RowIndex);
+                dgvPatient.DataSource = null;
+                dgvPatient.DataSource=p.GetPatients().ToList();
+
             }
         }
     }
