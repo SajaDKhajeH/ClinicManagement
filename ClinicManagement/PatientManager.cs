@@ -18,5 +18,12 @@ namespace ClinicManagement
 
             Patients.Add(Patient);
         }
+        public void DeletePatient(int index)
+        { 
+            if(Patients != null && index>=0)
+            {
+                Patients.RemoveAt(index);
+            }
+        }
     }
 }

@@ -73,7 +73,7 @@
             this.txtLastName.Margin = new System.Windows.Forms.Padding(5);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(172, 34);
-            this.txtLastName.TabIndex = 1;
+            this.txtLastName.TabIndex = 2;
             // 
             // label3
             // 
@@ -91,7 +91,7 @@
             this.txtNationalCode.Margin = new System.Windows.Forms.Padding(5);
             this.txtNationalCode.Name = "txtNationalCode";
             this.txtNationalCode.Size = new System.Drawing.Size(172, 34);
-            this.txtNationalCode.TabIndex = 1;
+            this.txtNationalCode.TabIndex = 3;
             // 
             // label4
             // 
@@ -109,7 +109,7 @@
             this.txtMobileNumber.Margin = new System.Windows.Forms.Padding(5);
             this.txtMobileNumber.Name = "txtMobileNumber";
             this.txtMobileNumber.Size = new System.Drawing.Size(172, 34);
-            this.txtMobileNumber.TabIndex = 1;
+            this.txtMobileNumber.TabIndex = 4;
             // 
             // btnSave
             // 
@@ -117,7 +117,7 @@
             this.btnSave.Margin = new System.Windows.Forms.Padding(5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(131, 42);
-            this.btnSave.TabIndex = 2;
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "ذخیره";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
