@@ -25,6 +25,7 @@ namespace ClinicManagement
 
             PatientManager PatientManager = new PatientManager();
             PatientManager.AddPatient(Patient);
+            
         }
 
     }
