@@ -6,6 +6,8 @@ namespace ClinicManagement
 {
     public partial class FrmPatients : Form
     {
+        PatientManager PatientManager = new PatientManager();
+
         public FrmPatients()
         {
             InitializeComponent();
@@ -21,7 +23,6 @@ namespace ClinicManagement
             FrmAddPatient frm = new FrmAddPatient();
 
             frm.ShowDialog();
-            PatientManager PatientManager = new PatientManager();
             dgvPatient.DataSource = PatientManager.GetPatients().ToList();
         }
 
@@ -29,7 +30,11 @@ namespace ClinicManagement
         {
             if (e.ColumnIndex == dgvPatient.Columns["ColDelete"].Index)
             {
-                MessageBox.Show(e.RowIndex.ToString());
+                if (DialogResult.Yes != MessageBox.Show("آیا از حذف مطمئن هستید؟", "Delete Patient", MessageBoxButtons.YesNo, MessageBoxIcon.Error))
+                    return;
+
+                PatientManager.RemovePatient(e.RowIndex);
+                dgvPatient.DataSource = PatientManager.GetPatients().ToList();
             }
         }
     }

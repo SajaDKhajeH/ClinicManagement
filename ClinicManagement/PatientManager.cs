@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ClinicManagement
 {
@@ -17,6 +18,11 @@ namespace ClinicManagement
                 Patients = new List<Patient>();
 
             Patients.Add(Patient);
+        }
+
+        public void RemovePatient(int index)
+        {
+            Patients.RemoveAt(index);
         }
     }
 }
