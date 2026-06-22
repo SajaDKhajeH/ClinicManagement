@@ -18,5 +18,15 @@ namespace ClinicManagement
 
             Patients.Add(Patient);
         }
+        public void RemovePatient(int index)
+        {
+            if (Patients == null)
+                return;
+            if (Patients.Count >= 0)
+            {
+                Patients.RemoveAt(index);
+                System.Windows.Forms.MessageBox.Show("حذف شد");
+            }
+        }
     }
 }

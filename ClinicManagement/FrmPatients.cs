@@ -29,7 +29,9 @@ namespace ClinicManagement
         {
             if (e.ColumnIndex == dgvPatient.Columns["ColDelete"].Index)
             {
-                MessageBox.Show(e.RowIndex.ToString());
+                PatientManager PatientManager = new PatientManager();
+                PatientManager.RemovePatient(e.RowIndex);
+                dgvPatient.DataSource= PatientManager.GetPatients().ToList();
             }
         }
     }
