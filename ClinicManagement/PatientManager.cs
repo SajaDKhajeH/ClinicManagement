@@ -41,6 +41,10 @@ namespace ClinicManagement
             else
             if (nationalCode.Length != 10)
                 errors.Add("کد ملی باید ۱۰ رقم باشد");
+            else
+                foreach (Patient item in Patients)
+                    if (item.NationalCode == nationalCode)
+                        errors.Add("کد ملی تکراری است");
 
             if (mobileNumber == null || mobileNumber.Trim() == "")
                 errors.Add("شماره تلفن اجباری است");
