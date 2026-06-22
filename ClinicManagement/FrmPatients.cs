@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using System.Windows.Forms.VisualStyles;
 
 namespace ClinicManagement
 {
     public partial class FrmPatients : Form
     {
+        PatientManager PatientManager = new PatientManager();
+
         public FrmPatients()
         {
             InitializeComponent();
@@ -21,7 +25,6 @@ namespace ClinicManagement
             FrmAddPatient frm = new FrmAddPatient();
 
             frm.ShowDialog();
-            PatientManager PatientManager = new PatientManager();
             dgvPatient.DataSource = PatientManager.GetPatients().ToList();
         }
 
@@ -31,6 +34,25 @@ namespace ClinicManagement
             {
                 MessageBox.Show(e.RowIndex.ToString());
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
+            dgvPatient.DataSource = PatientManager.GetPatients().ToList();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            List<Patient> searchedList = new List<Patient>();
+
+            foreach (Patient item in PatientManager.GetPatients())
+            {
+                if (txtSearch.Text.Trim() == item.NationalCode)
+                    searchedList.Add(item);
+            }
+
+            dgvPatient.DataSource = searchedList;
         }
     }
 }
