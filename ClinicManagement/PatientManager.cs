@@ -20,9 +20,13 @@ namespace ClinicManagement
             Patients.Add(Patient);
         }
 
-        public void RemovePatient(int index)
+        public void RemovePatientByNationalCode(string nationalCode)
         {
-            Patients.RemoveAt(index);
+            foreach (Patient item in Patients)
+                if(item.NationalCode == nationalCode) {
+                    Patients.Remove(item);
+                    break;
+                }
         }
     }
 }

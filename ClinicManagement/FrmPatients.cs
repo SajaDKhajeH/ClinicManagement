@@ -30,10 +30,12 @@ namespace ClinicManagement
         {
             if (e.ColumnIndex == dgvPatient.Columns["ColDelete"].Index)
             {
-                if (DialogResult.Yes != MessageBox.Show("آیا از حذف مطمئن هستید؟", "Delete Patient", MessageBoxButtons.YesNo, MessageBoxIcon.Error))
+                DialogResult result = MessageBox.Show("آیا از حذف مطمئن هستید؟", "Delete Patient", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+
+                if (DialogResult.Yes != result)
                     return;
 
-                PatientManager.RemovePatient(e.RowIndex);
+                PatientManager.RemovePatientByNationalCode(dgvPatient.Rows[e.RowIndex].Cells[5].Value.ToString());
                 dgvPatient.DataSource = PatientManager.GetPatients().ToList();
             }
         }
