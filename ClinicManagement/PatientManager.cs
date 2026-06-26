@@ -27,29 +27,29 @@ namespace ClinicManagement
         ){
             List<string> errors = new List<string>();
 
-            if (firstName == null || firstName.Trim() == "")
+            if (string.IsNullOrWhiteSpace(firstName))
                 errors.Add("نام اجباری است");
 
-            if (lastName == null || lastName.Trim() == "")
+            if (string.IsNullOrWhiteSpace(lastName))
                 errors.Add("نام خانوادگی اجباری است");
 
-            if (nationalCode == null || nationalCode.Trim() == "")
+            if (string.IsNullOrWhiteSpace(nationalCode))
                 errors.Add("کد ملی اجباری است");
-            else
-            if (!int.TryParse(nationalCode, out int _))
+            else if (!int.TryParse(nationalCode, out int _))
                 errors.Add("کد ملی نامعتبر است");
-            else
-            if (nationalCode.Length != 10)
+            else if (nationalCode.Length != 10)
                 errors.Add("کد ملی باید ۱۰ رقم باشد");
             else
                 foreach (Patient item in Patients)
                     if (item.NationalCode == nationalCode)
+                    {
                         errors.Add("کد ملی تکراری است");
+                        break;
+                    }
 
-            if (mobileNumber == null || mobileNumber.Trim() == "")
+            if (string.IsNullOrWhiteSpace(mobileNumber))
                 errors.Add("شماره تلفن اجباری است");
-            else
-            if (mobileNumber.Length != 11)
+            else if (mobileNumber.Length != 11)
                 errors.Add("شماره تلفن باید ۱۱ رقم باشد");
 
             return errors.ToArray();
