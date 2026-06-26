@@ -59,7 +59,7 @@
             this.ColEdit,
             this.ColDelete});
             this.dgvPatient.Location = new System.Drawing.Point(9, 60);
-            this.dgvPatient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPatient.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPatient.Name = "dgvPatient";
             this.dgvPatient.ReadOnly = true;
             this.dgvPatient.RowHeadersWidth = 51;
@@ -134,7 +134,7 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(9, 10);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(38, 45);
             this.btnAdd.TabIndex = 1;
@@ -180,10 +180,9 @@
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvPatient);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmPatients";
             this.Text = "FrmPatient";
-            this.Load += new System.EventHandler(this.FrmPatient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatient)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

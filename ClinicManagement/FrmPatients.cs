@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Windows.Forms;
 using System.Collections.Generic;
-using System.Windows.Forms.VisualStyles;
 
 namespace ClinicManagement
 {
@@ -13,11 +12,6 @@ namespace ClinicManagement
         public FrmPatients()
         {
             InitializeComponent();
-        }
-
-        private void FrmPatient_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
