@@ -29,8 +29,8 @@ namespace ClinicManagement
         {
             if (e.ColumnIndex == dgvPatient.Columns["ColDelete"].Index)
             {
-                MessageBox.Show(e.RowIndex.ToString());
-            }
+               MessageBox.Show(e.RowIndex.ToString());
+            }        
         }
     }
 }
