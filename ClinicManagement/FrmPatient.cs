@@ -28,7 +28,7 @@ namespace ClinicManagement
 
             PatientManager patientManager = new PatientManager();
 
-            string error = patientManager.ValidatePatient(patient);
+            string error = patientManager.AddPatient(patient);
 
             if (error != null)
             {
@@ -37,8 +37,6 @@ namespace ClinicManagement
                     MessageBoxIcon.Warning);
                 return;
             }
-
-            patientManager.AddPatient(patient);
 
             MessageBox.Show("بیمار با موفقیت ثبت شد.");
             this.Close();

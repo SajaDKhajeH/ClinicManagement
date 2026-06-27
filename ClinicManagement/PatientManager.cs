@@ -12,12 +12,19 @@ namespace ClinicManagement
             return Patients;
         }
 
-        public void AddPatient(Patient Patient)
+        public string AddPatient(Patient patient)
         {
             if (Patients == null)
                 Patients = new List<Patient>();
 
-            Patients.Add(Patient);
+            string error = ValidatePatient(patient);
+
+            if (error != null)
+                return error;
+
+            Patients.Add(patient);
+
+            return null;
         }
 
         public void DeletePatient(Patient patient)
@@ -42,7 +49,7 @@ namespace ClinicManagement
                 .ToList();
         }
 
-        public string ValidatePatient(Patient patient)
+        private string ValidatePatient(Patient patient)
         {
             if (patient == null)
                 return "اطلاعات بیمار نامعتبر است.";
