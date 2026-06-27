@@ -18,5 +18,9 @@ namespace ClinicManagement
 
             Patients.Add(Patient);
         }
+        public void RemovePatient(Patient Patient)
+        {
+            Patients.Remove(Patient);
+        }
     }
 }

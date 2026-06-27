@@ -56,7 +56,7 @@
             this.MobileNumber,
             this.ColEdit,
             this.ColDelete});
-            this.dgvPatient.Location = new System.Drawing.Point(12, 74);
+            this.dgvPatient.Location = new System.Drawing.Point(12, 73);
             this.dgvPatient.Name = "dgvPatient";
             this.dgvPatient.ReadOnly = true;
             this.dgvPatient.RowHeadersWidth = 51;
@@ -164,8 +164,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvPatient;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn NationalCode;
@@ -175,5 +173,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewButtonColumn ColEdit;
         private System.Windows.Forms.DataGridViewButtonColumn ColDelete;
+        private System.Windows.Forms.DataGridView dgvPatient;
     }
 }
