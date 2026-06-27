@@ -1,15 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
 namespace ClinicManagement
 {
     public partial class FrmAddPatient : Form
     {
+       
+
         public FrmAddPatient()
         {
             InitializeComponent();
         }
-
+        
         private void FrmAddPatient_Load(object sender, EventArgs e)
         {
            
@@ -17,6 +22,8 @@ namespace ClinicManagement
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+
+            PatientManager PatientManager = new PatientManager();
             Patient Patient = new Patient();
             PatientManager PatientManager = new PatientManager();
             if (PatientManager.GetPatients() != null)
@@ -50,5 +57,6 @@ namespace ClinicManagement
             }
         }
 
+            
     }
 }
