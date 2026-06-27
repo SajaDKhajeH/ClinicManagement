@@ -11,11 +11,6 @@ namespace ClinicManagement
             InitializeComponent();
         }
 
-        private void FrmAddPatient_Load(object sender, EventArgs e)
-        {
-           
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtLastName.Text) ||
