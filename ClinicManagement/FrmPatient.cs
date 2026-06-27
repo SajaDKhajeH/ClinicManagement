@@ -25,7 +25,7 @@ namespace ClinicManagement
 
             PatientManager PatientManager = new PatientManager();
             Patient Patient = new Patient();
-            PatientManager PatientManager = new PatientManager();
+            
             if (PatientManager.GetPatients() != null)
             {
                 foreach (var patient in PatientManager.GetPatients())

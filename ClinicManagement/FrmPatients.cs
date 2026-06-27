@@ -24,13 +24,16 @@ namespace ClinicManagement
             PatientManager PatientManager = new PatientManager();
             dgvPatient.DataSource = PatientManager.GetPatients().ToList();
         }
-
+       
         private void dgvPatient_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            PatientManager patientManager = new PatientManager();
             if (e.ColumnIndex == dgvPatient.Columns["ColDelete"].Index)
             {
-               MessageBox.Show(e.RowIndex.ToString());
-            }        
+                Patient patient=dgvPatient.Rows[e.RowIndex].DataBoundItem as Patient;   
+                patientManager.RemovePatient(patient);
+                dgvPatient.DataSource=patientManager.GetPatients().ToList();
+            }
         }
     }
 }
