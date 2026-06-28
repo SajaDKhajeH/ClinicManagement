@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ClinicManagement
@@ -17,14 +18,28 @@ namespace ClinicManagement
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Patient Patient = new Patient();
-            Patient.FirstName = txtName.Text;
-            Patient.LastName = txtLastName.Text;
-            Patient.NationalCode = txtNationalCode.Text;
-            Patient.MobileNumber = txtMobileNumber.Text;
+            Patient patient = new Patient
+            {
+                FirstName = txtName.Text.Trim(),
+                LastName = txtLastName.Text.Trim(),
+                NationalCode = txtNationalCode.Text.Trim(),
+                MobileNumber = txtMobileNumber.Text.Trim()
+            };
 
-            PatientManager PatientManager = new PatientManager();
-            PatientManager.AddPatient(Patient);
+            PatientManager patientManager = new PatientManager();
+
+            string error = patientManager.AddPatient(patient);
+
+            if (error != null)
+            {
+                MessageBox.Show(error, "خطا",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
+            MessageBox.Show("بیمار با موفقیت ثبت شد.");
+            this.Close();
         }
 
     }
