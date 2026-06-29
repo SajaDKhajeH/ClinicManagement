@@ -55,7 +55,7 @@
             this.txtName.Margin = new System.Windows.Forms.Padding(5);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(172, 34);
-            this.txtName.TabIndex = 1;
+            this.txtName.TabIndex = 0;
             // 
             // label2
             // 
@@ -91,7 +91,7 @@
             this.txtNationalCode.Margin = new System.Windows.Forms.Padding(5);
             this.txtNationalCode.Name = "txtNationalCode";
             this.txtNationalCode.Size = new System.Drawing.Size(172, 34);
-            this.txtNationalCode.TabIndex = 1;
+            this.txtNationalCode.TabIndex = 2;
             // 
             // label4
             // 
@@ -109,7 +109,7 @@
             this.txtMobileNumber.Margin = new System.Windows.Forms.Padding(5);
             this.txtMobileNumber.Name = "txtMobileNumber";
             this.txtMobileNumber.Size = new System.Drawing.Size(172, 34);
-            this.txtMobileNumber.TabIndex = 1;
+            this.txtMobileNumber.TabIndex = 3;
             // 
             // btnSave
             // 
@@ -117,7 +117,7 @@
             this.btnSave.Margin = new System.Windows.Forms.Padding(5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(131, 42);
-            this.btnSave.TabIndex = 2;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "ذخیره";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -139,8 +139,8 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmAddPatient";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddPatient";
-            this.Load += new System.EventHandler(this.FrmAddPatient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

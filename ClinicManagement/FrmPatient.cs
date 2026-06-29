@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ClinicManagement
@@ -10,13 +11,14 @@ namespace ClinicManagement
             InitializeComponent();
         }
 
-        private void FrmAddPatient_Load(object sender, EventArgs e)
-        {
-           
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtLastName.Text) ||
+                string.IsNullOrWhiteSpace(txtMobileNumber.Text) || string.IsNullOrWhiteSpace(txtNationalCode.Text))
+            {
+                MessageBox.Show("Please Enter the information completely..!");
+                return;
+            }
             Patient Patient = new Patient();
             Patient.FirstName = txtName.Text;
             Patient.LastName = txtLastName.Text;
@@ -24,7 +26,14 @@ namespace ClinicManagement
             Patient.MobileNumber = txtMobileNumber.Text;
 
             PatientManager PatientManager = new PatientManager();
-            PatientManager.AddPatient(Patient);
+            try
+            {
+                PatientManager.AddPatient(Patient);
+            }
+            catch(InvalidDataException)
+            {
+                MessageBox.Show("a user with this national code already exists.");
+            }
         }
 
     }
