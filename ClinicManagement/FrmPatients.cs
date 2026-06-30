@@ -32,5 +32,31 @@ namespace ClinicManagement
                 MessageBox.Show(e.RowIndex.ToString());
             }
         }
+        
+        private void btnsearch_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtsearch.Text))
+            {
+                MessageBox.Show("متن جسجتو رو وارد کن");
+                return;
+            }
+            bool found=false;
+            
+            for (int i = 0; i < dgvPatient.RowCount; i++)
+            {
+                var cellValue = dgvPatient.Rows[i].Cells["NationalCode"].Value;
+                if (cellValue != null && txtsearch.Text.Trim() == cellValue.ToString())
+                {
+                    found=true; 
+                    dgvPatient.FirstDisplayedScrollingRowIndex = i;
+                    dgvPatient.Rows[i].Selected = true;
+                    break;
+                }
+            }
+
+            if (!found)
+                MessageBox.Show("کدملی پیدا نشد");
+        }
     }
+
 }
