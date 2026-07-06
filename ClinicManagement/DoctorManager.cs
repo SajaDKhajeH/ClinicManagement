@@ -19,12 +19,26 @@ namespace ClinicManagement
             Doctors.Add(Doctor);
         }
 
-        public void UpdateDoctor(Doctor Doctor)
+        public void EditDoctor(Doctor doctor, Doctor newDoctor)
         {
-            if (Doctors == null)
-                Doctors = new List<Doctor>();
+            for (int i = 0; i < Doctors.Count; i++)
+            {
+                if (Doctors[i].MedicalCouncilNumber == doctor.MedicalCouncilNumber)
+                {
+                    Doctors[i] = newDoctor;
+                    break;
+                }
+            }
+        }
 
-            
+        public void RemoveDoctorByMedicalCouncilNumber(string medicalCouncilNumber)
+        {
+            foreach (Doctor item in Doctors)
+                if (item.MedicalCouncilNumber == medicalCouncilNumber)
+                {
+                    Doctors.Remove(item);
+                    break;
+                }
         }
 
         public string[] Validation(
@@ -43,8 +57,8 @@ namespace ClinicManagement
 
             if (string.IsNullOrWhiteSpace(medicalCouncilNumber))
                 errors.Add("کد نظام پزشکی اجباری است");
-            else if (medicalCouncilNumber.Length <= 3)
-                errors.Add("کد نظام پزشکی باید ۱۰ رقم باشد");
+            else if (medicalCouncilNumber.Length < 3)
+                errors.Add("کد نظام پزشکی باید ۳ رقم باشد");
 
             return errors.ToArray();
         }

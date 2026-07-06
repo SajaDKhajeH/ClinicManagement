@@ -12,6 +12,8 @@ namespace ClinicManagement
 {
     public partial class FrmDoctors : Form
     {
+        DoctorManager DoctorManager = new DoctorManager();
+
         public FrmDoctors()
         {
             InitializeComponent();
@@ -24,19 +26,45 @@ namespace ClinicManagement
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            FrmAddPatient frm = new FrmAddPatient();
+            FrmDoctor frm = new FrmDoctor();
 
             frm.ShowDialog();
-            PatientManager PatientManager = new PatientManager();
-            dgvPatient.DataSource = PatientManager.GetPatients().ToList();
+
+            if (DoctorManager.GetDoctors() == null) return;
+            dgvDoctor.DataSource = DoctorManager.GetDoctors().ToList();
         }
 
-        private void dgvPatient_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvDoctor_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var p = new Patient();
+            if (e.ColumnIndex == dgvDoctor.Columns["DeleteBtn"].Index)
+            {
+                DialogResult result = MessageBox.Show("آیا از حذف مطمئن هستید؟", "Delete Doctor", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
 
-            if (e.ColumnIndex == dgvPatient.Columns["ColDelete"].Index)
-                MessageBox.Show(e.RowIndex.ToString());
+                if (DialogResult.Yes != result)
+                    return;
+
+                DoctorManager.RemoveDoctorByMedicalCouncilNumber(dgvDoctor.Rows[e.RowIndex].Cells[4].Value.ToString());
+                dgvDoctor.DataSource = DoctorManager.GetDoctors().ToList();
+            }
+
+            if (e.ColumnIndex == dgvDoctor.Columns["EditBtn"].Index)
+            {
+                Doctor doctor = null;
+
+                foreach(var dc in DoctorManager.GetDoctors())
+                {
+                    if(dc.MedicalCouncilNumber == dgvDoctor.Rows[e.RowIndex].Cells[4].Value.ToString())
+                    {
+                        doctor = dc;
+                        break;
+                    }
+                }
+
+                FrmDoctor frm = new FrmDoctor(doctor);
+
+                frm.ShowDialog();
+                dgvDoctor.DataSource = DoctorManager.GetDoctors().ToList();
+            }
         }
     }
 }

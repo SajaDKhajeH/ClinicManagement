@@ -46,7 +46,7 @@
             this.btnSave.Margin = new System.Windows.Forms.Padding(5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(131, 42);
-            this.btnSave.TabIndex = 11;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "ذخیره";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -58,7 +58,7 @@
             this.txtMedicalCouncilNumber.Margin = new System.Windows.Forms.Padding(5);
             this.txtMedicalCouncilNumber.Name = "txtMedicalCouncilNumber";
             this.txtMedicalCouncilNumber.Size = new System.Drawing.Size(172, 29);
-            this.txtMedicalCouncilNumber.TabIndex = 8;
+            this.txtMedicalCouncilNumber.TabIndex = 2;
             // 
             // label3
             // 
@@ -78,7 +78,7 @@
             this.txtLastName.Margin = new System.Windows.Forms.Padding(5);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(172, 29);
-            this.txtLastName.TabIndex = 9;
+            this.txtLastName.TabIndex = 1;
             // 
             // label2
             // 
@@ -98,7 +98,7 @@
             this.txtName.Margin = new System.Windows.Forms.Padding(5);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(172, 29);
-            this.txtName.TabIndex = 10;
+            this.txtName.TabIndex = 0;
             // 
             // label1
             // 
@@ -116,7 +116,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(37, 225);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(172, 80);
-            this.richTextBox1.TabIndex = 12;
+            this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             // 
             // label4
@@ -146,6 +146,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmDoctor";
             this.Text = "FrmDoctor";
+            this.Load += new System.EventHandler(this.FrmDoctor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

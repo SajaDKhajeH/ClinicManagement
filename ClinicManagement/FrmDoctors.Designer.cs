@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvPatient = new System.Windows.Forms.DataGridView();
+            this.dgvDoctor = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.medicalCouncilNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -36,32 +36,33 @@
             this.specialties = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeleteBtn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.EditBtn = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPatient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDoctor)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvPatient
+            // dgvDoctor
             // 
-            this.dgvPatient.AllowUserToAddRows = false;
-            this.dgvPatient.AllowUserToDeleteRows = false;
-            this.dgvPatient.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvDoctor.AllowUserToAddRows = false;
+            this.dgvDoctor.AllowUserToDeleteRows = false;
+            this.dgvDoctor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPatient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDoctor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.medicalCouncilNumber,
             this.name,
             this.family,
             this.specialties,
             this.DeleteBtn,
             this.EditBtn});
-            this.dgvPatient.Location = new System.Drawing.Point(11, 68);
-            this.dgvPatient.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvPatient.Name = "dgvPatient";
-            this.dgvPatient.ReadOnly = true;
-            this.dgvPatient.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgvPatient.RowHeadersWidth = 51;
-            this.dgvPatient.RowTemplate.Height = 24;
-            this.dgvPatient.Size = new System.Drawing.Size(613, 296);
-            this.dgvPatient.TabIndex = 4;
+            this.dgvDoctor.Location = new System.Drawing.Point(11, 68);
+            this.dgvDoctor.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvDoctor.Name = "dgvDoctor";
+            this.dgvDoctor.ReadOnly = true;
+            this.dgvDoctor.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dgvDoctor.RowHeadersWidth = 51;
+            this.dgvDoctor.RowTemplate.Height = 24;
+            this.dgvDoctor.Size = new System.Drawing.Size(704, 296);
+            this.dgvDoctor.TabIndex = 4;
+            this.dgvDoctor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDoctor_CellContentClick);
             // 
             // btnAdd
             // 
@@ -73,6 +74,7 @@
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "+";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // medicalCouncilNumber
             // 
@@ -85,21 +87,21 @@
             // 
             // name
             // 
-            this.name.DataPropertyName = "name";
+            this.name.DataPropertyName = "FirstName";
             this.name.HeaderText = "نام";
             this.name.Name = "name";
             this.name.ReadOnly = true;
             // 
             // family
             // 
-            this.family.DataPropertyName = "family";
+            this.family.DataPropertyName = "LastName";
             this.family.HeaderText = "نام خانوادگی";
             this.family.Name = "family";
             this.family.ReadOnly = true;
             // 
             // specialties
             // 
-            this.specialties.DataPropertyName = "specialties";
+            this.specialties.DataPropertyName = "FullSpecialties";
             this.specialties.HeaderText = "تخصص ها";
             this.specialties.Name = "specialties";
             this.specialties.ReadOnly = true;
@@ -120,20 +122,20 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(635, 375);
-            this.Controls.Add(this.dgvPatient);
+            this.ClientSize = new System.Drawing.Size(726, 375);
+            this.Controls.Add(this.dgvDoctor);
             this.Controls.Add(this.btnAdd);
             this.Name = "FrmDoctors";
             this.Text = "FrmDoctors";
             this.Load += new System.EventHandler(this.FrmDoctors_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPatient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDoctor)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvPatient;
+        private System.Windows.Forms.DataGridView dgvDoctor;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn medicalCouncilNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
