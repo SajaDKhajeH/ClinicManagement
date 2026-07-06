@@ -42,78 +42,78 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(352, 81);
+            this.label1.Location = new System.Drawing.Point(240, 46);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 29);
+            this.label1.Size = new System.Drawing.Size(25, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "نام";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(170, 81);
+            this.txtName.Location = new System.Drawing.Point(58, 46);
             this.txtName.Margin = new System.Windows.Forms.Padding(5);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(172, 34);
+            this.txtName.Size = new System.Drawing.Size(172, 29);
             this.txtName.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(352, 144);
+            this.label2.Location = new System.Drawing.Point(240, 109);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 29);
+            this.label2.Size = new System.Drawing.Size(85, 24);
             this.label2.TabIndex = 0;
             this.label2.Text = "نام خانوادگی";
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(170, 144);
+            this.txtLastName.Location = new System.Drawing.Point(58, 109);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(5);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(172, 34);
+            this.txtLastName.Size = new System.Drawing.Size(172, 29);
             this.txtLastName.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(352, 237);
+            this.label3.Location = new System.Drawing.Point(240, 202);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 29);
+            this.label3.Size = new System.Drawing.Size(45, 24);
             this.label3.TabIndex = 0;
             this.label3.Text = "کدملی";
             // 
             // txtNationalCode
             // 
-            this.txtNationalCode.Location = new System.Drawing.Point(170, 237);
+            this.txtNationalCode.Location = new System.Drawing.Point(58, 202);
             this.txtNationalCode.Margin = new System.Windows.Forms.Padding(5);
             this.txtNationalCode.Name = "txtNationalCode";
-            this.txtNationalCode.Size = new System.Drawing.Size(172, 34);
+            this.txtNationalCode.Size = new System.Drawing.Size(172, 29);
             this.txtNationalCode.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(352, 315);
+            this.label4.Location = new System.Drawing.Point(240, 280);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 29);
+            this.label4.Size = new System.Drawing.Size(49, 24);
             this.label4.TabIndex = 0;
             this.label4.Text = "موبایل";
             // 
             // txtMobileNumber
             // 
-            this.txtMobileNumber.Location = new System.Drawing.Point(170, 310);
+            this.txtMobileNumber.Location = new System.Drawing.Point(58, 275);
             this.txtMobileNumber.Margin = new System.Windows.Forms.Padding(5);
             this.txtMobileNumber.Name = "txtMobileNumber";
-            this.txtMobileNumber.Size = new System.Drawing.Size(172, 34);
+            this.txtMobileNumber.Size = new System.Drawing.Size(172, 29);
             this.txtMobileNumber.TabIndex = 1;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(211, 391);
+            this.btnSave.Location = new System.Drawing.Point(86, 356);
             this.btnSave.Margin = new System.Windows.Forms.Padding(5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(131, 42);
@@ -124,9 +124,9 @@
             // 
             // FrmAddPatient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 528);
+            this.ClientSize = new System.Drawing.Size(350, 416);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtMobileNumber);
             this.Controls.Add(this.label4);

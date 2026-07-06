@@ -46,7 +46,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDoctor.Designer.cs">
+      <DependentUpon>FrmDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDoctors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDoctors.Designer.cs">
+      <DependentUpon>FrmDoctors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStarter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStarter.Designer.cs">
+      <DependentUpon>FrmStarter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor.cs" />
     <Compile Include="Patient.cs" />
+    <Compile Include="DoctorManager.cs" />
     <Compile Include="PatientManager.cs" />
     <Compile Include="FrmPatient.cs">
       <SubType>Form</SubType>
@@ -63,11 +83,20 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Result.cs" />
+    <EmbeddedResource Include="FrmDoctor.resx">
+      <DependentUpon>FrmDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDoctors.resx">
+      <DependentUpon>FrmDoctors.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPatient.resx">
       <DependentUpon>FrmPatient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPatients.resx">
       <DependentUpon>FrmPatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStarter.resx">
+      <DependentUpon>FrmStarter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
