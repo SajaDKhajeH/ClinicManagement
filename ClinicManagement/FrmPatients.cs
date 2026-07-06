@@ -29,7 +29,23 @@ namespace ClinicManagement
         {
             if (e.ColumnIndex == dgvPatient.Columns["ColDelete"].Index)
             {
-                MessageBox.Show(e.RowIndex.ToString());
+                PatientManager PatientManager = new PatientManager();
+                PatientManager.RemovePatient(e.RowIndex);
+                dgvPatient.DataSource= PatientManager.GetPatients().ToList();
+            }
+        }
+
+        private void txtNational_TextChanged(object sender, EventArgs e)
+        {
+            PatientManager PatientManager = new PatientManager();
+            if (txtNational.Text == "")
+            {
+                dgvPatient.DataSource = PatientManager.GetPatients().ToList();
+            }
+            else
+            {
+                PatientManager.Search(txtNational.Text);
+                dgvPatient.DataSource = PatientManager.Search(txtNational.Text).ToList();
             }
         }
     }

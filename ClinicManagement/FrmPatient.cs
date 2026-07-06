@@ -53,6 +53,7 @@ namespace ClinicManagement
 
            
             PatientManager.AddPatient(Patient);
+<<<<<<< HEAD
             foreach (Control item in this.Controls)
             {
                 if(item is TextBox)
@@ -62,6 +63,9 @@ namespace ClinicManagement
             }
             MessageBox.Show("ذخیره شد","پیام",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
+=======
+            
+>>>>>>> main
         }
 
     }
