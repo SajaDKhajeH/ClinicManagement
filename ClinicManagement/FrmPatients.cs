@@ -22,10 +22,12 @@ namespace ClinicManagement
         private void btnAdd_Click(object sender, EventArgs e)
         {
             FrmAddPatient frm = new FrmAddPatient();
-
             frm.ShowDialog();
-            PatientManager PatientManager = new PatientManager();
-            dgvPatient.DataSource = PatientManager.GetPatients().ToList();
+
+            PatientManager patientManager = new PatientManager();
+            dgvPatient.AutoGenerateColumns = false;
+            dgvPatient.DataSource = null;
+            dgvPatient.DataSource = patientManager.GetPatients().ToList();
         }
 
         private void dgvPatient_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -43,21 +45,25 @@ namespace ClinicManagement
                     Patient patient = (Patient)dgvPatient.Rows[e.RowIndex].DataBoundItem;
 
                     PatientManager patientManager = new PatientManager();
-                    patientManager.DeletePatient(patient);
-                  
-                    dgvPatient.AutoGenerateColumns = false; // برای اینه که بعد از دیلیت یک رکورد ترتیب فیلد ها بهم میریخت
-                    dgvPatient.DataSource = null;
-                    dgvPatient.DataSource = patientManager.GetPatients().ToList();
+                    Result resultD = patientManager.DeletePatient(patient);
+
+                    if (resultD.Success)
+                    {
+                        dgvPatient.AutoGenerateColumns = false;
+                        dgvPatient.DataSource = null;
+                        dgvPatient.DataSource = patientManager.GetPatients().ToList();
+                    }
+                    else
+                    {
+                        MessageBox.Show(resultD.Message, "خطا", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+       
 
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void btnSearch_Click_1(object sender, EventArgs e)
         {
             PatientManager patientManager = new PatientManager();
 

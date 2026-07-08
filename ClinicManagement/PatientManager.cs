@@ -14,10 +14,10 @@ namespace ClinicManagement
 
         public Result AddPatient(Patient patient)
         {
-            if (patient.NationalCode.Length != 10)
-            {
-                return Result.Failed("کدملی نامعتبر");
-            }
+            var validate = ValidatePatient(patient);
+            if (!validate.Success)
+                return validate;
+
             if (Patients == null)
                 Patients = new List<Patient>();
 
@@ -29,40 +29,34 @@ namespace ClinicManagement
                 id = 0;
 
             id++;
-
             patient.Id = id;
 
             Patients.Add(patient);
             return Result.Ok();
         }
 
-        public Result UpdatePatient(Patient patient)
+        //اضافه کردن و اعتبار ستجی به یه روش دیگه
+        //public Result UpdatePatient(Patient patient)
+        //{
+        //    var validate = patient.Validate();
+        //    if (!validate.Success)
+        //        return validate;
+        //    if (Patients == null)
+        //        Patients = new List<Patient>();
+        //  //  string error = ValidatePatient(patient);
+        //   // if (error != null)
+        //        return Result.Failed("خطایی رخ داد");
+        //   // Patients.Add(patient);
+        //    //return null;
+        //}
+
+        public Result DeletePatient(Patient patient)
         {
-            var validate = patient.Validate();
+            if (Patients == null || !Patients.Contains(patient))
+                return Result.Failed("بیمار مورد نظر یافت نشد.");
 
-            if (!validate.Success)
-                return validate;
-
-
-            if (Patients == null)
-                Patients = new List<Patient>();
-
-            string error = ValidatePatient(patient);
-
-            if (error != null)
-                return error;
-
-            Patients.Add(patient);
-
-            return null;
-        }
-
-        public void DeletePatient(Patient patient)
-        {
-            if (Patients != null)
-            {
-                Patients.Remove(patient);
-            }
+            Patients.Remove(patient);
+            return Result.Ok();
         }
 
         public List<Patient> SearchPatient(string searchText)
@@ -79,55 +73,54 @@ namespace ClinicManagement
                 .ToList();
         }
 
-        private string ValidatePatient(Patient patient)
+        private Result ValidatePatient(Patient patient)
         {
             if (patient == null)
-                return "اطلاعات بیمار نامعتبر است.";
+                return Result.Failed("اطلاعات بیمار نامعتبر است.");
 
             if (string.IsNullOrWhiteSpace(patient.FirstName) ||
                 string.IsNullOrWhiteSpace(patient.LastName) ||
                 string.IsNullOrWhiteSpace(patient.NationalCode) ||
                 string.IsNullOrWhiteSpace(patient.MobileNumber))
             {
-                return "وارد کردن تمامی اطلاعات الزامی است.";
+                return Result.Failed("وارد کردن تمامی اطلاعات الزامی است.");
             }
 
             if (patient.NationalCode.Length != 10 ||
                 !patient.NationalCode.All(char.IsDigit))
             {
-                return "کد ملی باید دقیقاً 10 رقم باشد.";
+                return Result.Failed("کد ملی باید دقیقاً 10 رقم باشد.");
             }
 
             if (!patient.MobileNumber.StartsWith("09") ||
                 patient.MobileNumber.Length != 11 ||
                 !patient.MobileNumber.All(char.IsDigit))
             {
-                return "شماره موبایل معتبر نیست.";
+                return Result.Failed("شماره موبایل معتبر نیست.");
             }
 
             var patients = GetPatients();
-
             if (patients != null &&
                 patients.Any(p => p.NationalCode == patient.NationalCode))
             {
-                return "این کد ملی قبلاً ثبت شده است.";
+                return Result.Failed("این کد ملی قبلاً ثبت شده است.");
             }
 
-            return null; 
-            int c = Patients.Count;
-            int id;
-            if (Patients.Count > 0)
-                id = Patients[c - 1].Id;
-            else
-                id = 0;
-
-            id++;
-
-            patient.Id = id;
-
-            Patients.Add(patient);
             return Result.Ok();
+        
+           // return null;
+            //int c = Patients.Count;
+            //int id;
+            //if (Patients.Count > 0)
+            //    id = Patients[c - 1].Id;
+            //else
+            //    id = 0;
+
+            //id++;
+
+            //patient.Id = id;
+
+             }
         }
 
     }
-}

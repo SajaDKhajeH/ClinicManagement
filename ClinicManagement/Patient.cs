@@ -4,14 +4,14 @@ namespace ClinicManagement
 {
     public class Patient
     {
-        public Patient(string firstName, string lastName)
-        {
-            FirstName = firstName;
-            LastName = lastName;
-        }
+        //public Patient(string firstName, string lastName)
+        //{
+        //    FirstName = firstName;
+        //    LastName = lastName;
+        //}
         public int Id { get; set; }
-        public string FirstName { get; private set; }
-        public string LastName { get; private set; }
+        public string FirstName { get;  set; }
+        public string LastName { get;  set; }
         public string FullName
         {
             get
