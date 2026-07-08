@@ -13,6 +13,10 @@ namespace ClinicManagement
 
         public Result AddPatient(Patient patient)
         {
+            if (string.IsNullOrEmpty(patient.NationalCode))
+            {
+                return Result.Failed("کدملی را وارد کن");
+            }
             if (patient.NationalCode.Length != 10)
             {
                 return Result.Failed("کدملی نامعتبر");

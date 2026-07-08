@@ -12,25 +12,17 @@ namespace ClinicManagement
 
         private void FrmAddPatient_Load(object sender, EventArgs e)
         {
-            var ali = new Patient();
-            ali.FirstName = "ali";
-            ali.LastName = "alavi";
+            //var ali = new Patient();
+            //ali.FirstName = "ali";
+            //ali.LastName = "alavi";
 
-            var reza = new Patient();
-            reza.FirstName = "ali";
-            reza.LastName = "alavi";
+            //var reza = new Patient();
+            //reza.FirstName = "ali";
+            //reza.LastName = "alavi";
 
-            if (ali == reza)
-            {
+           
 
-            }
-
-            var a = 0;
-            var frm = new FrmAddPatient();
-
-            int i;
-
-            var aa = a == 0 ? "1" : "9";
+        
         }
 
         private void btnSave_Click(object sender, EventArgs e)

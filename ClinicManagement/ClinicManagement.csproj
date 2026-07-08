@@ -46,6 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Doctor.cs" />
+    <Compile Include="DrManager.cs" />
+    <Compile Include="frmadddoctors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmadddoctors.Designer.cs">
+      <DependentUpon>frmadddoctors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frmdoctors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmdoctors.Designer.cs">
+      <DependentUpon>Frmdoctors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEdit.Designer.cs">
+      <DependentUpon>frmEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Patient.cs" />
     <Compile Include="PatientManager.cs" />
     <Compile Include="FrmPatient.cs">
@@ -63,6 +83,16 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Result.cs" />
+    <Compile Include="Result2.cs" />
+    <EmbeddedResource Include="frmadddoctors.resx">
+      <DependentUpon>frmadddoctors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmdoctors.resx">
+      <DependentUpon>Frmdoctors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEdit.resx">
+      <DependentUpon>frmEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPatient.resx">
       <DependentUpon>FrmPatient.cs</DependentUpon>
     </EmbeddedResource>
