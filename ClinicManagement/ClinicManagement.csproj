@@ -61,6 +61,7 @@
       <DependentUpon>FrmDoctorsList.cs</DependentUpon>
     </Compile>
     <Compile Include="Patient.cs" />
+    <Compile Include="DoctorManager.cs" />
     <Compile Include="PatientManager.cs" />
     <Compile Include="FrmPatient.cs">
       <SubType>Form</SubType>
@@ -88,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPatients.resx">
       <DependentUpon>FrmPatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStarter.resx">
+      <DependentUpon>FrmStarter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

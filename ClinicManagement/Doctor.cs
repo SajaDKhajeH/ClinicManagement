@@ -8,24 +8,25 @@ namespace ClinicManagement
 {
     using System;
 
-        public class Doctor
-        {
+    public class Doctor
+    {
             public Doctor(string medicalCouncilNumber)
             {
-                MedicalCouncilNumber = medicalCouncilNumber;
-            }
+            MedicalCouncilNumber = medicalCouncilNumber;
+        }
 
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
 
             public string FullName
             {
                 get { return FirstName + " " + LastName; }
             }
 
-            public string MedicalCouncilNumber { get; set; }
+        public string MedicalCouncilNumber { get; set; }
+        public string[] Specialties { get; set; }
 
             public string Specialty { get; set; }
-        }
     }
+}
 

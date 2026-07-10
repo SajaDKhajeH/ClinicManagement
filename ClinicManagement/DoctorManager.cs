@@ -44,10 +44,12 @@ namespace ClinicManagement
 
             doctors.Add(doctor);
             return Result.Ok();
+                }
+            }
         }
 
         public Result DeleteDoctor(string medicalCouncilNumber)
-        {
+                {
             if (string.IsNullOrWhiteSpace(medicalCouncilNumber))
                 return Result.Failed("شماره نظام پزشکی نمی‌تواند خالی باشد.");
 
