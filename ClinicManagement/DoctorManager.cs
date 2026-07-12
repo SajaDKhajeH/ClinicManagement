@@ -87,5 +87,13 @@ namespace ClinicManagement
 
             return Result.Ok();
         }
+
+        internal static int GenerateNewId()
+        {
+            if (_doctors.Count == 0)
+                return 1;
+
+            return _doctors[_doctors.Count - 1].Id + 1;
+        }
     }
 }

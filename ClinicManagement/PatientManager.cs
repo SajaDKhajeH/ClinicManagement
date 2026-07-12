@@ -9,6 +9,10 @@ namespace ClinicManagement
 
         public List<Patient> GetPatients()
         {
+
+            //Result r = new Result();
+            //r.Success = true;
+            //r.Message = "";
             return Patients;
         }
 

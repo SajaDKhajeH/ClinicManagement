@@ -14,7 +14,17 @@ namespace ClinicManagement
             {
             MedicalCouncilNumber = medicalCouncilNumber;
         }
+        public Doctor(string nezamPezeshki) : this()
+        {
+            NezamPezeshki = nezamPezeshki;
 
+        }
+        public Doctor(string firstName, string lastName) : this("")
+        {
+            FirstName = firstName;
+            LastName = lastName;
+        }
+        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
 

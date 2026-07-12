@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,13 +16,16 @@ namespace ClinicManagement
     {
         public FrmDoctor()
         {
-            this.doctor = doctor;
+            _doctor = doctor;
+        }
+        public FrmDoctor()
+        {
             InitializeComponent();
         }
 
         private void FrmDoctor_Load(object sender, EventArgs e)
         {
-            string[] errors = DoctorManager.Validation(
+            string[] errors = _doctorManager.Validation(
                 firstName: txtName.Text,
                 lastName: txtLastName.Text,
                 medicalCouncilNumber: txtMedicalCouncilNumber.Text
@@ -46,25 +50,35 @@ namespace ClinicManagement
                 this.Close();
             }
 
-            Doctor Doctor = new Doctor(txtMedicalCouncilNumber.Text);
-            Doctor.FirstName = txtName.Text;
-            Doctor.LastName = txtLastName.Text;
-            Doctor.Specialties = richTextBox1.Text.Split('\n');
+            Doctor doctor = new Doctor(txtMedicalCouncilNumber.Text);
+            doctor.FirstName = txtName.Text;
+            doctor.LastName = txtLastName.Text;
+            //int[] numbers = { 3, 4, 7, 9 };
 
-            if (this.doctor == null)
-                DoctorManager.AddDoctor(Doctor);
+            // string sss = string.Join(",", numbers);
+
+            //foreach (var n in numbers)
+            //{
+            //    sss += n + ",";
+            //}
+
+
+            doctor.Specialties = Regex.Split(richTextBox1.Text, Environment.NewLine);
+
+            if (this._doctor == null)
+                _doctorManager.AddDoctor(doctor);
             else
-                MessageBox.Show(result.Message, "خطا", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            
+                DoctorManager.EditDoctor(this.doctor, Doctor);
+        }
 
         private void FrmDoctor_Load(object sender, EventArgs e)
         {
-            if (doctor != null)
+            if (_doctor != null)
             {
-                txtName.Text = doctor.FirstName;
-                txtLastName.Text = doctor.LastName;
-                txtMedicalCouncilNumber.Text = doctor.MedicalCouncilNumber;
-                richTextBox1.Text = string.Join(Environment.NewLine, doctor.Specialties);
+                txtName.Text = _doctor.FirstName;
+                txtLastName.Text = _doctor.LastName;
+                txtMedicalCouncilNumber.Text = _doctor.NezamPezeshki;
+                richTextBox1.Text = string.Join(Environment.NewLine, _doctor.Specialties);
             }
         }
     }
