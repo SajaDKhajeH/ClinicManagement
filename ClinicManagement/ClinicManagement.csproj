@@ -46,31 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Doctor.cs" />
+    <Compile Include="DoctorManager.cs" />
     <Compile Include="FrmDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmDoctor.Designer.cs">
       <DependentUpon>FrmDoctor.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDoctors.cs">
+    <Compile Include="FrmDoctorsList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDoctors.Designer.cs">
-      <DependentUpon>FrmDoctors.cs</DependentUpon>
+    <Compile Include="FrmDoctorsList.Designer.cs">
+      <DependentUpon>FrmDoctorsList.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmStarter.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmStarter.Designer.cs">
-      <DependentUpon>FrmStarter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Doctor.cs" />
     <Compile Include="Patient.cs" />
     <Compile Include="DoctorManager.cs" />
     <Compile Include="PatientManager.cs" />
@@ -95,8 +84,8 @@
     <EmbeddedResource Include="FrmDoctor.resx">
       <DependentUpon>FrmDoctor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDoctors.resx">
-      <DependentUpon>FrmDoctors.cs</DependentUpon>
+    <EmbeddedResource Include="FrmDoctorsList.resx">
+      <DependentUpon>FrmDoctorsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPatient.resx">
       <DependentUpon>FrmPatient.cs</DependentUpon>

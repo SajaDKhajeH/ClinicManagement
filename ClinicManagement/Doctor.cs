@@ -1,13 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ClinicManagement
 {
+    using System;
+
     public class Doctor
     {
-        private Doctor()
-        {
-            Id = DoctorManager.GenerateNewId();
+            public Doctor(string medicalCouncilNumber)
+            {
+            MedicalCouncilNumber = medicalCouncilNumber;
         }
         public Doctor(string nezamPezeshki) : this()
         {
@@ -22,15 +27,16 @@ namespace ClinicManagement
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string NezamPezeshki { get; set; }
+
+            public string FullName
+            {
+                get { return FirstName + " " + LastName; }
+            }
+
+        public string MedicalCouncilNumber { get; set; }
         public string[] Specialties { get; set; }
 
-        public string FullSpecialties
-        {
-            get
-            {
-                return string.Join(", ", Specialties);
-            }
-        }
+            public string Specialty { get; set; }
     }
 }
+

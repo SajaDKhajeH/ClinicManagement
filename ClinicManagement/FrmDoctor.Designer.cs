@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.btnSave = new System.Windows.Forms.Button();
+            this.txtSpecialty = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtMedicalCouncilNumber = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtLastName = new System.Windows.Forms.TextBox();
@@ -41,102 +43,104 @@
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(94, 332);
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(121, 361);
             this.btnSave.Margin = new System.Windows.Forms.Padding(5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(131, 42);
-            this.btnSave.TabIndex = 4;
-            this.btnSave.Text = "ذخیره";
+            this.btnSave.TabIndex = 11;
+            this.btnSave.Text = "save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // txtMedicalCouncilNumber
+            // txtSpecialty
             // 
-            this.txtMedicalCouncilNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMedicalCouncilNumber.Location = new System.Drawing.Point(37, 175);
-            this.txtMedicalCouncilNumber.Margin = new System.Windows.Forms.Padding(5);
-            this.txtMedicalCouncilNumber.Name = "txtMedicalCouncilNumber";
-            this.txtMedicalCouncilNumber.Size = new System.Drawing.Size(172, 29);
-            this.txtMedicalCouncilNumber.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(219, 175);
-            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 24);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "کد پزشکی";
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastName.Location = new System.Drawing.Point(37, 82);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(5);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(172, 29);
-            this.txtLastName.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(219, 82);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 24);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "نام خانوادگی";
-            // 
-            // txtName
-            // 
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(37, 19);
-            this.txtName.Margin = new System.Windows.Forms.Padding(5);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(172, 29);
-            this.txtName.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(219, 19);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 24);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "نام";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(37, 225);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(172, 80);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
+            this.txtSpecialty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSpecialty.Location = new System.Drawing.Point(80, 280);
+            this.txtSpecialty.Margin = new System.Windows.Forms.Padding(5);
+            this.txtSpecialty.Name = "txtSpecialty";
+            this.txtSpecialty.Size = new System.Drawing.Size(172, 30);
+            this.txtSpecialty.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(219, 225);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(262, 285);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 24);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "تخصص ها";
+            this.label4.Size = new System.Drawing.Size(92, 25);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Specialty";
+            // 
+            // txtMedicalCouncilNumber
+            // 
+            this.txtMedicalCouncilNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMedicalCouncilNumber.Location = new System.Drawing.Point(80, 207);
+            this.txtMedicalCouncilNumber.Margin = new System.Windows.Forms.Padding(5);
+            this.txtMedicalCouncilNumber.Name = "txtMedicalCouncilNumber";
+            this.txtMedicalCouncilNumber.Size = new System.Drawing.Size(172, 30);
+            this.txtMedicalCouncilNumber.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(262, 207);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(215, 25);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "MedicalCouncilNumber";
+            // 
+            // txtLastName
+            // 
+            this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.Location = new System.Drawing.Point(80, 114);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(5);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(172, 30);
+            this.txtLastName.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(262, 114);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(106, 25);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Last Name";
+            // 
+            // txtName
+            // 
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(80, 51);
+            this.txtName.Margin = new System.Windows.Forms.Padding(5);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(172, 30);
+            this.txtName.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(262, 51);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 25);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Name";
             // 
             // FrmDoctor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(318, 397);
-            this.Controls.Add(this.richTextBox1);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.txtSpecialty);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtMedicalCouncilNumber);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -155,6 +159,8 @@
         #endregion
 
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox txtSpecialty;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtMedicalCouncilNumber;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtLastName;

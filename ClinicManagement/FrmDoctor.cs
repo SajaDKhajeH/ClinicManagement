@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClinicManagement.ClinicManagement;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +14,7 @@ namespace ClinicManagement
 {
     public partial class FrmDoctor : Form
     {
-        DoctorManager _doctorManager = new DoctorManager();
-        Doctor _doctor = null;
-
-
-        public FrmDoctor(Doctor doctor) : this()
+        public FrmDoctor()
         {
             _doctor = doctor;
         }
@@ -26,7 +23,7 @@ namespace ClinicManagement
             InitializeComponent();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void FrmDoctor_Load(object sender, EventArgs e)
         {
             string[] errors = _doctorManager.Validation(
                 firstName: txtName.Text,
@@ -34,16 +31,23 @@ namespace ClinicManagement
                 medicalCouncilNumber: txtMedicalCouncilNumber.Text
             );
 
-            if (errors.Length > 0)
-            {
-                MessageBox.Show(
-                    errors[0],
-                    "Validation Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+        }
 
-                return;
+        private void btnSave_Click(object sender, EventArgs e)
+            {
+            Doctor doctor = new Doctor(txtMedicalCouncilNumber.Text.Trim());
+            doctor.FirstName = txtName.Text.Trim();
+            doctor.LastName = txtLastName.Text.Trim();
+            doctor.Specialty = txtSpecialty.Text.Trim();
+
+            
+            DoctorManager doctorManager = new DoctorManager();
+            Result result = doctorManager.AddDoctor(doctor);
+           // var result = DoctorManager.AddDoctor(doctor);
+
+            if (result.Success) {
+                MessageBox.Show("اطلاعات با موفیقت ثبت شد");
+                this.Close();
             }
 
             Doctor doctor = new Doctor(txtMedicalCouncilNumber.Text);
@@ -64,7 +68,7 @@ namespace ClinicManagement
             if (this._doctor == null)
                 _doctorManager.AddDoctor(doctor);
             else
-                _doctorManager.EditDoctor(this._doctor, doctor);
+                DoctorManager.EditDoctor(this.doctor, Doctor);
         }
 
         private void FrmDoctor_Load(object sender, EventArgs e)
