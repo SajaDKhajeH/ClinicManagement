@@ -72,8 +72,13 @@
             this.txtLastName.Location = new System.Drawing.Point(58, 109);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(5);
             this.txtLastName.Name = "txtLastName";
+<<<<<<< HEAD
+            this.txtLastName.Size = new System.Drawing.Size(172, 34);
+            this.txtLastName.TabIndex = 2;
+=======
             this.txtLastName.Size = new System.Drawing.Size(172, 29);
             this.txtLastName.TabIndex = 1;
+>>>>>>> 8b155cce0448b0d328e0146ea79ca62241b7f8a0
             // 
             // label3
             // 
@@ -90,8 +95,13 @@
             this.txtNationalCode.Location = new System.Drawing.Point(58, 202);
             this.txtNationalCode.Margin = new System.Windows.Forms.Padding(5);
             this.txtNationalCode.Name = "txtNationalCode";
+<<<<<<< HEAD
+            this.txtNationalCode.Size = new System.Drawing.Size(172, 34);
+            this.txtNationalCode.TabIndex = 3;
+=======
             this.txtNationalCode.Size = new System.Drawing.Size(172, 29);
             this.txtNationalCode.TabIndex = 1;
+>>>>>>> 8b155cce0448b0d328e0146ea79ca62241b7f8a0
             // 
             // label4
             // 
@@ -108,8 +118,13 @@
             this.txtMobileNumber.Location = new System.Drawing.Point(58, 275);
             this.txtMobileNumber.Margin = new System.Windows.Forms.Padding(5);
             this.txtMobileNumber.Name = "txtMobileNumber";
+<<<<<<< HEAD
+            this.txtMobileNumber.Size = new System.Drawing.Size(172, 34);
+            this.txtMobileNumber.TabIndex = 4;
+=======
             this.txtMobileNumber.Size = new System.Drawing.Size(172, 29);
             this.txtMobileNumber.TabIndex = 1;
+>>>>>>> 8b155cce0448b0d328e0146ea79ca62241b7f8a0
             // 
             // btnSave
             // 
@@ -117,7 +132,7 @@
             this.btnSave.Margin = new System.Windows.Forms.Padding(5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(131, 42);
-            this.btnSave.TabIndex = 2;
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "ذخیره";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);

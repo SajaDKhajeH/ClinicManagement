@@ -2,8 +2,16 @@
 
 namespace ClinicManagement
 {
-    public class Patient
+    public class Patient:Person
     {
+<<<<<<< HEAD
+        
+       
+        public string NationalCode { get;private set; }
+        public string MobileNumber { get; private set; }
+        public Patient(string firstName, string lastName, string nationalCode, string mobileNumber)
+            :base(firstName, lastName)
+=======
         public Patient(string firstName = "", string lastName = "")
         {
             FirstName = firstName;
@@ -13,12 +21,13 @@ namespace ClinicManagement
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string FullName
+>>>>>>> 8b155cce0448b0d328e0146ea79ca62241b7f8a0
         {
-            get
-            {
-                return FirstName + " " + LastName;
-            }
+            NationalCode = nationalCode;
+            MobileNumber = mobileNumber;
         }
+<<<<<<< HEAD
+=======
         private string nationalCode;
 
         public string NationalCode
@@ -39,5 +48,6 @@ namespace ClinicManagement
             return Result.Ok();
         }
 
+>>>>>>> 8b155cce0448b0d328e0146ea79ca62241b7f8a0
     }
 }

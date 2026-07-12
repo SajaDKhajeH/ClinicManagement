@@ -34,6 +34,32 @@ namespace ClinicManagement
 
             if (e.ColumnIndex == dgvPatient.Columns["ColDelete"].Index)
             {
+<<<<<<< HEAD
+                PatientManager PatientManager = new PatientManager();
+                PatientManager.RemovePatient(e.RowIndex);
+                dgvPatient.DataSource= PatientManager.GetPatients().ToList();
+            }
+        }
+
+        private void txtNational_TextChanged(object sender, EventArgs e)
+        {
+            PatientManager PatientManager = new PatientManager();
+            if (txtNational.Text == "")
+            {
+                dgvPatient.DataSource = PatientManager.GetPatients().ToList();
+            }
+            else
+            {
+                PatientManager.Search(txtNational.Text);
+                dgvPatient.DataSource = PatientManager.Search(txtNational.Text).ToList();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmDoctors();
+            frm .ShowDialog();
+=======
                 int b = 0;
 
                 MessageBox.Show(e.RowIndex.ToString());
@@ -95,6 +121,7 @@ namespace ClinicManagement
 
             MessageBox.Show("reza:" + reza);
             MessageBox.Show("ali:" + ali);
+>>>>>>> 8b155cce0448b0d328e0146ea79ca62241b7f8a0
         }
     }
 }

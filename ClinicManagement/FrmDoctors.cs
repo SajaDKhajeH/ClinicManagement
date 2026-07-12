@@ -21,61 +21,62 @@ namespace ClinicManagement
             InitializeComponent();
         }
 
-        private void FrmDoctors_Load(object sender, EventArgs e)
-        {
-            //string firstName = doctor?.Bimar?.FirstName ?? "نام ثبت نشده";
-            //if (doctor != null && doctor.FirstName != null )
-            //{
-            //    firstName = doctor.FirstName;
-            //}
-            MessageBox.Show("firstName");
-
-
-
-
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            doctor = new Doctor("");
-            FrmDoctor frm = new FrmDoctor();
-
+            var frm = new FrmDoctor();
             frm.ShowDialog();
-
-            if (DoctorManager.GetDoctors() == null) return;
-            dgvDoctor.DataSource = DoctorManager.GetDoctors().ToList();
+            var doc = new DoctorManagement();
+            dgvDoctors.DataSource=doc.GetDoctor().ToList();
         }
 
-        private void dgvDoctor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (e.ColumnIndex == dgvDoctor.Columns["DeleteBtn"].Index)
-            {
-                DialogResult result = MessageBox.Show("آیا از حذف مطمئن هستید؟", "Delete Doctor", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
 
-                if (DialogResult.Yes != result)
-                    return;
-                DoctorManager.RemoveDoctor(dgvDoctor.Rows[e.RowIndex].Cells[4].Value.ToString());
-                dgvDoctor.DataSource = DoctorManager.GetDoctors().ToList();
+        }
+        DoctorManagement doc = new DoctorManagement();
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(doc.DeleteDoctor(txtDelete.Text))
+            {
+                MessageBox.Show("Removed!");
+                dgvDoctors.DataSource = doc.GetDoctor().ToList();
             }
-
-            if (e.ColumnIndex == dgvDoctor.Columns["EditBtn"].Index)
+            else
             {
-                Doctor doctor = null;
-
-                foreach (var dc in DoctorManager.GetDoctors())
-                {
-                    if (dc.NezamPezeshki == dgvDoctor.Rows[e.RowIndex].Cells[4].Value.ToString())
-                    {
-                        doctor = dc;
-                        break;
-                    }
-                }
-
-                FrmDoctor frm = new FrmDoctor(doctor);
-
-                frm.ShowDialog();
-                dgvDoctor.DataSource = DoctorManager.GetDoctors().ToList();
+                MessageBox.Show("Not Fuond!");
+                txtDelete.Focus();
             }
         }
+
+        private void btnEdite_Click(object sender, EventArgs e)
+        {
+            int id;
+            if (!string.IsNullOrWhiteSpace(txtId.Text) && int.TryParse(txtId.Text, out id))
+            {
+                Doctor doctor = DoctorManagement.GetDoctorById(id);
+                if (doctor == null)
+                {
+                    MessageBox.Show("آیدی وارد شده موجود نیست");
+                    txtId.Text = null;
+                    txtId.Focus();
+                    return;
+                }
+                FrmDoctor frm = new FrmDoctor(doctor);
+                frm.ShowDialog();
+                dgvDoctors.DataSource = doc.GetDoctor().ToList();
+
+            }
+            else
+            {
+                MessageBox.Show("آیدی را وارد کنید");
+                txtId.Focus();            
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+      }
     }
 }

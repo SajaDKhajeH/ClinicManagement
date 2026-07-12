@@ -13,9 +13,29 @@ namespace ClinicManagement
             //r.Success = true;
             //r.Message = "";
             return Patients;
+            
         }
+        public bool NationalCodeExist(string nationalCode)
+        {
+            if (Patients == null)
+            {
+                return false;
+            }
+            foreach (Patient patient in Patients)
+            {
+                if (patient.NationalCode == nationalCode)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+<<<<<<< HEAD
+        public void AddPatient(Patient Patient)
+=======
 
         public Result AddPatient(Patient patient)
+>>>>>>> 8b155cce0448b0d328e0146ea79ca62241b7f8a0
         {
             if (patient.NationalCode.Length != 10)
             {
@@ -23,6 +43,35 @@ namespace ClinicManagement
             }
             if (Patients == null)
                 Patients = new List<Patient>();
+<<<<<<< HEAD
+            
+            Patients.Add(Patient);
+        }
+
+        public void RemovePatient(int index)
+        {
+            if (Patients == null)
+                return;
+            if (Patients.Count >= 0)
+            {
+                Patients.RemoveAt(index);
+                System.Windows.Forms.MessageBox.Show("حذف شد");
+            }
+        }
+        public List<Patient> Search(string national)
+        {
+            List<Patient> res= new List<Patient>();
+            foreach (Patient patient in Patients)
+            {
+                if (patient.NationalCode == national)
+                {
+                    res.Add(patient);
+                }
+            }
+            return res;
+           
+        }
+=======
 
             int c = Patients.Count;
             int id;
@@ -65,5 +114,6 @@ namespace ClinicManagement
             return Result.Ok();
         }
 
+>>>>>>> 8b155cce0448b0d328e0146ea79ca62241b7f8a0
     }
 }
