@@ -5,19 +5,15 @@ namespace ClinicManagement
 {
     public class Doctor : Person
     {
-        private Doctor() : base("", "")
+        private Doctor(string firstName, string lastName)
+            : base(firstName, lastName)
         {
             Id = DoctorManager.GenerateNewId();
         }
-        public Doctor(string nezamPezeshki) : this()
+        public Doctor(string nezamPezeshki, string firstName, string lastName)
+            : this(firstName, lastName)
         {
             NezamPezeshki = nezamPezeshki;
-
-        }
-        public Doctor(string firstName, string lastName) : this("")
-        {
-            FirstName = firstName;
-            LastName = lastName;
         }
         public string NezamPezeshki { get; set; }
         public string[] Specialties { get; set; }
@@ -28,6 +24,27 @@ namespace ClinicManagement
             {
                 return string.Join(", ", Specialties);
             }
+        }
+
+        public override Result Validate()
+        {
+            var validate = base.Validate();
+            if (!validate.Success)
+            {
+                return validate;
+            }
+
+            if (string.IsNullOrEmpty(NezamPezeshki) || NezamPezeshki.Length < 3)
+            {
+                return Result.Failed("نظام پزشکی نامعتبر");
+            }
+
+            if ((Specialties?.Length ?? 0) == 0)
+            {
+                return Result.Failed("تخصص پزشک وارد نشده");
+            }
+
+            return Result.Ok();
         }
     }
 }

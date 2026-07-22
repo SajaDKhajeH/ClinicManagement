@@ -21,6 +21,8 @@ namespace ClinicManagement
         {
             try
             {
+                if (string.IsNullOrEmpty(nationalCode))
+                    return false;
                 char[] chArray = nationalCode.ToCharArray();
                 int[] numArray = new int[chArray.Length];
                 for (int i = 0; i < chArray.Length; i++)

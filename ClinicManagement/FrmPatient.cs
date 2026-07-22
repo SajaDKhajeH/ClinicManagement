@@ -36,12 +36,8 @@ namespace ClinicManagement
         private void btnSave_Click(object sender, EventArgs e)
         {
             Patient patient = new Patient(txtName.Text, txtLastName.Text);
-            
-            PrintData(patient);
-            //Patient.FirstName = txtName.Text;
-            //Patient.LastName = txtLastName.Text;
-            //Patient.NationalCode = txtNationalCode.Text;
-            //Patient.MobileNumber = txtMobileNumber.Text;
+            patient.NationalCode = txtNationalCode.Text;
+            //PrintData(patient);
 
             PatientManager PatientManager = new PatientManager();
 

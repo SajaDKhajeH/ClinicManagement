@@ -4,65 +4,36 @@ namespace ClinicManagement
 {
     internal class PatientManager
     {
-        private static List<Patient> Patients;
+        private static List<Patient> _patients = new List<Patient>();
 
         public List<Patient> GetPatients()
         {
-
-            //Result r = new Result();
-            //r.Success = true;
-            //r.Message = "";
-            return Patients;
+            return new List<Patient>(_patients);
         }
 
         public Result AddPatient(Patient patient)
         {
-            if (!patient.NationalCode.IsNationalCode())
+            var vaidate = patient.Validate();
+            if (!vaidate.Success)
             {
-                return Result.Failed("کدملی نامعتبر");
+                return Result.Failed(vaidate.Message);
             }
-            if (Patients == null)
-                Patients = new List<Patient>();
 
-            int c = Patients.Count;
-            int id;
-            if (Patients.Count > 0)
-                id = Patients[c - 1].Id;
-            else
-                id = 0;
-
-            id++;
-
-            patient.Id = id;
-
-            Patients.Add(patient);
+            _patients.Add(patient);
             return Result.Ok();
         }
 
         public Result UpdatePatient(Patient patient)
         {
-            var validate = patient.Validate();
-
-            if (!validate.Success)
-                return validate;
-
-
-            if (Patients == null)
-                Patients = new List<Patient>();
-
-            int c = Patients.Count;
-            int id;
-            if (Patients.Count > 0)
-                id = Patients[c - 1].Id;
-            else
-                id = 0;
-
-            id++;
-
-            patient.Id = id;
-
-            Patients.Add(patient);
+            //TODO: Implement later
             return Result.Ok();
+        }
+        internal static int GenerateNewId()
+        {
+            if (_patients.Count == 0)
+                return 1;
+
+            return _patients[_patients.Count - 1].Id + 1;
         }
 
     }

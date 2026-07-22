@@ -24,9 +24,23 @@ namespace ClinicManagement
             }
         }
 
-        protected string Hello()
+        public void Hello()
         {
-            return "";
+            var v = Validate();
+        }
+
+        public virtual Result Validate()
+        {
+            if (string.IsNullOrEmpty(FirstName) || FirstName.Length < 2)
+            {
+                return Result.Failed("نام را وارد کن");
+            }
+            if (string.IsNullOrEmpty(LastName) || LastName.Length < 2)
+            {
+                return Result.Failed("نام خانوادگی را وارد کن");
+            }
+
+            return Result.Ok();
         }
     }
 }

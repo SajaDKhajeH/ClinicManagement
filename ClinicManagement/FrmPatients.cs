@@ -24,8 +24,8 @@ namespace ClinicManagement
             FrmAddPatient frm = new FrmAddPatient();
 
             frm.ShowDialog();
-            PatientManager PatientManager = new PatientManager();
-            dgvPatient.DataSource = PatientManager.GetPatients().ToList();
+            PatientManager patientManager = new PatientManager();
+            dgvPatient.DataSource = patientManager.GetPatients().ToList();
         }
 
         private void dgvPatient_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -95,6 +95,12 @@ namespace ClinicManagement
 
             MessageBox.Show("reza:" + reza);
             MessageBox.Show("ali:" + ali);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PatientManager patientManager = new PatientManager();
+            patientManager.GetPatients().Clear();
         }
     }
 }

@@ -18,6 +18,8 @@ namespace ClinicManagement
         }
         private void FrmStarter_Load(object sender, EventArgs e)
         {
+            var p = new Doctor("1010", "hasan", "hasani");
+            p.Hello();
             var b = new Patient("ali", "alavi");
             //var doctor = new Doctor("123456");
 
