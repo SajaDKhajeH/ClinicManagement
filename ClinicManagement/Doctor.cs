@@ -3,9 +3,9 @@ using System.Linq;
 
 namespace ClinicManagement
 {
-    public class Doctor
+    public class Doctor : Person
     {
-        private Doctor()
+        private Doctor() : base("", "")
         {
             Id = DoctorManager.GenerateNewId();
         }
@@ -19,9 +19,6 @@ namespace ClinicManagement
             FirstName = firstName;
             LastName = lastName;
         }
-        public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
         public string NezamPezeshki { get; set; }
         public string[] Specialties { get; set; }
 

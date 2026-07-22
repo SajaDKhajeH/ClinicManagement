@@ -30,7 +30,7 @@ namespace ClinicManagement
 
         private void dgvPatient_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var p = new Patient();
+            var p = new Patient("", "");
 
             if (e.ColumnIndex == dgvPatient.Columns["ColDelete"].Index)
             {

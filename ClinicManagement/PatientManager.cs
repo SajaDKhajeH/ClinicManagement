@@ -17,7 +17,7 @@ namespace ClinicManagement
 
         public Result AddPatient(Patient patient)
         {
-            if (patient.NationalCode.Length != 10)
+            if (!patient.NationalCode.IsNationalCode())
             {
                 return Result.Failed("کدملی نامعتبر");
             }

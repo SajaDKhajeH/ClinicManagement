@@ -2,23 +2,14 @@
 
 namespace ClinicManagement
 {
-    public class Patient
+    public sealed class Patient : Person
     {
-        public Patient(string firstName = "", string lastName = "")
+        public Patient(string firstName, string lastName)
+            : base(firstName, lastName)
         {
-            FirstName = firstName;
-            LastName = lastName;
         }
-        public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string FullName
-        {
-            get
-            {
-                return FirstName + " " + LastName;
-            }
-        }
+
+
         private string nationalCode;
 
         public string NationalCode
@@ -35,6 +26,8 @@ namespace ClinicManagement
             {
                 return Result.Failed("کدملی نامعتبر");
             }
+
+            string h = Hello();
 
             return Result.Ok();
         }

@@ -18,10 +18,14 @@ namespace ClinicManagement
         }
         private void FrmStarter_Load(object sender, EventArgs e)
         {
+            var b = new Patient("ali", "alavi");
             //var doctor = new Doctor("123456");
 
 
-            var doctor2 = new Doctor("123456", "14655");
+            //var doctor2 = new Doctor("123456", "14655");
+
+
+            //var p = new Person();
 
 
         }
@@ -39,6 +43,14 @@ namespace ClinicManagement
             frm.Show();
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int i = textBox1.Text.ToInt();
 
+
+            var today = DateTime.Now.ToShamsiDate();
+
+            MessageBox.Show(today);
+        }
     }
 }

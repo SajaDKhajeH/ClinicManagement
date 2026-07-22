@@ -12,11 +12,11 @@ namespace ClinicManagement
 
         private void FrmAddPatient_Load(object sender, EventArgs e)
         {
-            var ali = new Patient();
+            var ali = new Patient("","");
             ali.FirstName = "ali";
             ali.LastName = "alavi";
 
-            var reza = new Patient();
+            var reza = new Patient("","");
             reza.FirstName = "ali";
             reza.LastName = "alavi";
 
